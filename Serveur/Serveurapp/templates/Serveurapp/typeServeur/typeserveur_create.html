@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ajouter un type de serveur</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Ajouter un type de serveur</h1>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Ajouter</button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ajouter un service</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style_c.css' %}">
+</head>
+<body>
+  <div class="container">
+    <h1>Ajouter un service</h1>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Ajouter</button>
+    </form>
+  </div>
+</body>
+</html>

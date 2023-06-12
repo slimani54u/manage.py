@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_c.css' %}">
+</head>
+<body>
+<div class="container">
+ <h2>Modifier l'application</h2>
+  <form method="post" action="{% url 'application_update' pk=app.pk %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Enregistrer les modifications</button>
+</form>
+    </div>
+
+
+
+</body>
+</html>
