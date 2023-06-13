@@ -8,14 +8,14 @@
 </head>
 <body>
 <div class="container">
- <h2>Modifier le service</h2>
-  <form method="post" action="{% url 'service_update' pk=service.pk %}">
+ <h2>Modifier l'user'</h2>
+  <form method="post" action="{% url 'utilisateur_update' pk=utilisateur.pk %}">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Enregistrer les modifications</button>
 </form>
 </div>
-{{error_message}}
+
 
 </body>
 </html>

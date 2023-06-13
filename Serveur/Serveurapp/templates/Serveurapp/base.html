@@ -55,6 +55,7 @@
         {% for application in applications %}
           <li>
             {{ application.nom_application }}
+            <img src="{{ application.logo.url }}" alt="Logo de l'application"class="application-logo">
             <a href="{% url 'application_update' pk=application.pk %}" class="update-button">Mettre à jour</a>
             <a href="{% url 'application_delete' pk=application.pk %}" class="delete-button">Supprimer</a>
           </li>
@@ -64,10 +65,17 @@
       <a href="{% url 'application_create' %}" class="add-button">Ajouter une application</a>
     </div>
   </div>
-
   <div class="resource-usage">
     <h2>Utilisation des ressources</h2>
     <p>Application services</p>
+  <a href="{% url 'upload_application' %}" class="load-button">upload</a>
+
+   <a href="{% url 'generate_service_report' %}" class="download-button">Générer la fiche des services</a>
+
+
+
+
+
   </div>
 </body>
 </html>

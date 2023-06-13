@@ -21,6 +21,10 @@ urlpatterns = [
 
     path('Serveurapp/typeserveur/create/', views.typeserveur_create, name='typeserveur_create'),
     path('Serveurapp/utilisateur/create/', views.utilisateur_create, name='utilisateur_create'),
+    #path('Serveurapp/utilisateur/update/<int:pk>/', views.utilisateur_update, name='utilisateur_update'),
+    
+    path('Serveurapp/upload-application/', upload_application, name='upload_application'),
+    path('Serveurapp/generate-service-report/', generate_service_report, name='generate_service_report'),
 
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+              ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

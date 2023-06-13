@@ -31,3 +31,15 @@ class ApplicationForm(forms.ModelForm):
     class Meta:
         model = Application
         fields = '__all__'
+
+
+from django import forms
+
+class ApplicationFileForm(forms.Form):
+    file = forms.FileField(label='Sélectionner un fichier')
+
+    def clean_file(self):
+        uploaded_file = self.cleaned_data['file']
+        if not uploaded_file.name.endswith('.txt'):
+            raise forms.ValidationError('Le fichier doit être de type texte (.txt)')
+        return uploaded_file

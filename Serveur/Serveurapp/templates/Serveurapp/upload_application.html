@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Télécharger une application</title>
+</head>
+<body>
+  <h2>Télécharger une application</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="file" required>
+    <button type="submit">Télécharger</button>
+  </form>
+</body>
+</html>

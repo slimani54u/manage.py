@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="POST" action="{% url 'generate_service_report' %}">
+    {% csrf_token %}
+    <label for="serveur_id">ID du serveur :</label>
+    <input type="number" name="serveur_id" id="serveur_id" required>
+    <button type="submit">Télécharger la fiche des services</button>
+</form>
+</body>
+</html>
