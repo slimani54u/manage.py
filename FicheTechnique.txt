@@ -1,0 +1,3 @@
+- Pour l'upload vous devriez mettre le fichier test.txt qui se trouve dans le repertoire dossier
+
+- Pour le download vous devriez	mettre l'id de serveur que vous voulez téléchargez cet id doit etre existant si non vous aurez le message serveur non trouvé
