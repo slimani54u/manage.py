@@ -1,0 +1,25 @@
+conf/uniconf.py
+
+command = '/home/toto/denv/bin/gunicorn'
+pythonpath='/home/toto/Serveur'
+bind='192.168.151.129:8000'
+workers=3
+
+/etc/nginx/sites-enabled/Serveur
+
+server {
+        listen 80;
+        server_name 192.168.151.129;
+
+location /static/ {
+        root /home/toto/static/css/;
+}
+
+location / {
+        proxy_pass http://192.168.151.129:8000;
+}
+}
+
+Il me semble que ce sont tous les fichiers que nous avions modifiés, en dehors bien sûr de settings.py pour établir la connexion avec DATABASE et ALLOWED_HOSTS pour permettre l'accès à des ip données. 
+
+J'ai également dû ajouter ces ip à CSRF_TRUSTED_ORIGINS car les tokens dans les html ne suffisaient pas pour les forms.
