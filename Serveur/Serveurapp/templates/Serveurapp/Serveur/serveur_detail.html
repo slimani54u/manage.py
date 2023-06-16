@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Détails du serveur</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_d.css' %}">
+</head>
+<body>
+    <h2>Détails du serveur</h2>
+    <p>Nom du serveur : {{ serveur.nom }}</p>
+    <p>Type de serveur : {{ serveur.type_serveur }}</p>
+    <p>Nombre de processeurs : {{ serveur.nombre_processeur }}</p>
+    <p>Capacité mémoire : {{ serveur.capacite_memoire }}</p>
+    <p>Capacité de stockage : {{ serveur.capacite_stockage }}</p>
+<a id="accueil-link"href="/">Revenir à l'accueil</a>
+</body>
+</html>

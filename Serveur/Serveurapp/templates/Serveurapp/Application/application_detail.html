@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Détails de l'application</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_d.css' %}">
+
+</head>
+<body>
+    <h2>Détails de l'application</h2>
+    <p>Nom de l'application : {{ application.nom_application }}</p>
+    <p>Utilisateur : {{ application.utilisateur }}</p>
+
+    <ul>
+        {% for service in application.services.all %}
+            <li>Services : {{ service }}</li>
+        {% endfor %}
+    </ul>
+    <h3>logo de l'application</h3>
+    <img src="{{ application.logo.url }}" alt="Logo de l'application"class="application-logo">
+<a id="accueil-link"href="/">Revenir à l'accueil</a>
+</body>
+</html>

@@ -9,18 +9,20 @@
   <div class="container">
     <div class="left-side">
       <h2>Liste des types de serveurs</h2>
-      <ul>
+      <ul class="club-list">
         {% for typeserveur in typeserveurs %}
           <li>{{ typeserveur.type }}</li>
         {% endfor %}
       </ul>
       <a href="{% url 'typeserveur_create' %}" class="add-button">Ajouter un type de serveur</a> <!-- Nouveau bouton -->
+
       <h2>Liste des serveurs</h2>
-      <ul>
+      <ul class="club-list">
         {% for serveur in serveurs %}
           <li>
             {{ serveur.nom }}
             <a href="{% url 'serveur_update' pk=serveur.pk %}" class="update-button">Mettre à jour</a>
+            <a href="{% url 'serveur_detail' pk=serveur.pk %}"class="detail-button">Détails du serveur</a>
             <a href="{% url 'serveur_delete' pk=serveur.pk %}" class="delete-button">Supprimer</a>
           </li>
         {% endfor %}
@@ -29,11 +31,12 @@
       <a href="{% url 'serveur_create' %}" class="add-button">Ajouter un serveur</a>
 
       <h2>Liste des services</h2>
-      <ul>
+      <ul class="club-list">
         {% for service in services %}
           <li>
             {{ service.nom_service }}
             <a href="{% url 'service_update' pk=service.pk %}" class="update-button">Mettre à jour</a>
+            <a href="{% url 'service_detail' pk=service.pk  %}"class="detail-button">Détails du service</a>
             <a href="{% url 'service_delete' pk=service.pk %}" class="delete-button">Supprimer</a>
           </li>
         {% endfor %}
@@ -44,19 +47,21 @@
 
     <div class="right-side">
       <h2>Liste des utilisateurs</h2>
-      <ul>
+      <ul class="joueur-list">
         {% for utilisateur in utilisateurs %}
           <li>{{ utilisateur.nom }} {{ utilisateur.prenom }}</li>
         {% endfor %}
       </ul>
       <a href="{% url 'utilisateur_create' %}" class="add-button">Ajouter un utilisateur</a>
+
       <h2>Liste des applications</h2>
-      <ul>
+      <ul class="joueur-list">
         {% for application in applications %}
           <li>
             {{ application.nom_application }}
-            <img src="{{ application.logo.url }}" alt="Logo de l'application"class="application-logo">
+            <img src="{{ application.logo.url }}" alt="Logo de l'application" class="application-logo">
             <a href="{% url 'application_update' pk=application.pk %}" class="update-button">Mettre à jour</a>
+            <a href="{% url 'application_detail' pk=application.pk %}"class="detail-button">Détails de l'application</a>
             <a href="{% url 'application_delete' pk=application.pk %}" class="delete-button">Supprimer</a>
           </li>
         {% endfor %}
@@ -65,17 +70,12 @@
       <a href="{% url 'application_create' %}" class="add-button">Ajouter une application</a>
     </div>
   </div>
+
   <div class="resource-usage">
     <h2>Utilisation des ressources</h2>
     <p>Application services</p>
-  <a href="{% url 'upload_application' %}" class="load-button">upload</a>
-
-   <a href="{% url 'generate_service_report' %}" class="download-button">Générer la fiche des services</a>
-
-
-
-
-
+    <a href="{% url 'upload_application' %}" class="load-button">Upload</a>
+    <a href="{% url 'generate_service_report' %}" class="download-button">Générer la fiche des services</a>
   </div>
 </body>
 </html>

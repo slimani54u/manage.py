@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Détails du service</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_d.css' %}">
+</head>
+<body>
+    <h2>Détails du service</h2>
+    <p>Nom du service : {{ service.nom_service }}</p>
+    <p>Date de lancement : {{ service.date_lancement }}</p>
+    <p>Espace mémoire utilisé : {{ service.espace_memoire_utilise }}</p>
+    <p>Mémoire vive nécessaire : {{ service.memoire_vive_necessaire }}</p>
+    <p>Serveur de lancement : {{ service.serveur_lancement }}</p>
+    <a id="accueil-link"href="/">Revenir à l'accueil</a>
+
+</body>
+</html>

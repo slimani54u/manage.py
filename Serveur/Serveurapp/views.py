@@ -83,7 +83,9 @@ def serveur_update(request, pk):
         form = ServeurForm(instance=serveur)
     return render(request, 'Serveurapp/Serveur/serveur_update.html', {'form': form, 'serveur': serveur})
 
-
+def serveur_detail(request, pk):
+    serveur = get_object_or_404(Serveur, pk=pk)
+    return render(request, 'Serveurapp/Serveur/serveur_detail.html', {'serveur': serveur})
 
 
 
@@ -125,6 +127,8 @@ def utilisateur_delete(request, pk):
 # Vues CRUD pour le modèle Service
 from django.db.models import F
 
+from django.db.models import F
+
 
 def service_create(request):
     if request.method == 'POST':
@@ -132,24 +136,39 @@ def service_create(request):
         if form.is_valid():
             service = form.save(commit=False)
 
-            if service.espace_memoire_utilise > service.serveur_lancement.capacite_stockage:
+            # Calculer la somme de la mémoire vive nécessaire et de l'espace mémoire utilisé pour tous les services du même serveur
+            total_memoire = service.memoire_vive_necessaire + sum(
+                service.serveur_lancement.service_set.values_list('memoire_vive_necessaire', flat=True)
+            )
+            total_espace_memoire = service.espace_memoire_utilise + sum(
+                service.serveur_lancement.service_set.values_list('espace_memoire_utilise', flat=True)
+            )
+
+            # Vérifier la capacité de stockage du serveur
+            if total_espace_memoire > service.serveur_lancement.capacite_stockage:
+                # Capacité de stockage insuffisante, renvoyer un message d'erreur
                 error_message = "La capacité de stockage du serveur est insuffisante pour ce service."
                 return render(request, 'Serveurapp/Services/service_create.html',
                               {'form': form, 'error_message': error_message})
 
-            if service.memoire_vive_necessaire > service.serveur_lancement.capacite_memoire:
+            # Vérifier la capacité mémoire du serveur
+            if total_memoire > service.serveur_lancement.capacite_memoire:
+                # Capacité mémoire insuffisante, renvoyer un message d'erreur
                 error_message = "La capacité mémoire du serveur est insuffisante pour ce service."
                 return render(request, 'Serveurapp/Services/service_create.html',
                               {'form': form, 'error_message': error_message})
+
+            # Capacité suffisante, enregistrer le service
             service.save()
-            service.serveur_lancement.capacite_stockage = service.serveur_lancement.capacite_stockage - service.espace_memoire_utilise
-            service.serveur_lancement.capacite_memoire = service.serveur_lancement.capacite_memoire - service.memoire_vive_necessaire
-            service.serveur_lancement.save()
+
+            # Diminuer la capacité de stockage et de mémoire du serveur
+
 
             return redirect('/')
     else:
         form = ServiceForm()
     return render(request, 'Serveurapp/Services/service_create.html', {'form': form})
+
 
 
 from django.db.models import F
@@ -206,7 +225,9 @@ def service_update(request, pk):
         form = ServiceForm(instance=service)
     return render(request, 'Serveurapp/Services/service_update.html', {'form': form, 'service': service})
 
-
+def service_detail(request, pk):
+    service = get_object_or_404(Service, pk=pk)
+    return render(request, 'Serveurapp/Services/service_detail.html', {'service': service})
 
 
 def service_delete(request, pk):
@@ -240,7 +261,9 @@ def application_update(request, pk):
     else:
         form = ApplicationForm(instance=application)
     return render(request, 'Serveurapp/Application/application_update.html', {'form': form,'app':application})
-
+def application_detail(request, pk):
+    application = get_object_or_404(Application, pk=pk)
+    return render(request, 'Serveurapp/Application/application_detail.html', {'application': application})
 
 def application_delete(request, pk):
     application = Application.objects.get(pk=pk)
@@ -273,7 +296,7 @@ def process_uploaded_file(file):
     service_infos = [line.strip().split(',') for line in lines[1:] if line.strip()]
 
     utilisateur = Utilisateur.objects.get(pk=1)  # Remplacez 1 par l'ID de l'utilisateur approprié
-    serveur = Serveur.objects.get(pk=2)  # Remplacez 2 par l'ID du serveur de déploiement approprié
+    serveur = Serveur.objects.get(pk=8)  # Remplacez 2 par l'ID du serveur de déploiement approprié
 
     application = Application(nom_application=application_name, utilisateur=utilisateur)
     application.save()

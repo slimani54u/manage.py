@@ -134,7 +134,7 @@ a {
 
 .add-button,
 .update-button,
-.delete-button {
+.delete-button,detail-button {
   display: inline-block;
   padding: 10px 20px;
   margin-right: 10px;
@@ -211,4 +211,19 @@ img.application-logo {
 .container .update-button,
 .container .delete-button {
   margin-bottom: 10px;
+}
+.detail-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 4px;
+  background-color: #66b3ff; /* Couleur bleu clair */
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.detail-button:hover {
+  background-color: #4da6ff; /* Couleur bleu clair plus foncé au survol */
 }

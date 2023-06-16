@@ -1,0 +1,65 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 40px;
+}
+
+h3 {
+  margin-top: 30px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+.application-logo {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.detail-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 4px;
+  background-color: #66b3ff; /* Couleur bleu clair */
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.detail-button:hover {
+  background-color: #4da6ff; /* Couleur bleu clair plus foncé au survol */
+}
+a#accueil-link {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #4CAF50;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+a#accueil-link:hover {
+  background-color: #45a049;
+}

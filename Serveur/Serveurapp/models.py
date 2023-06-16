@@ -51,8 +51,8 @@ class Service(models.Model):
 
 class Application(models.Model):
     nom_application = models.CharField(max_length=50)
-    logo = models.ImageField(upload_to='logos/',default='/image.jpg')
-    services = models.ManyToManyField(Service, blank=True)
+    logo = models.ImageField(upload_to='logos/',default='logos/image.jpg')
+    services = models.ManyToManyField(Service)
     utilisateur = models.ForeignKey(Utilisateur, on_delete=models.CASCADE)
 
     def __str__(self):

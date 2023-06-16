@@ -33,8 +33,6 @@ class ApplicationForm(forms.ModelForm):
         fields = '__all__'
 
 
-from django import forms
-
 class ApplicationFileForm(forms.Form):
     file = forms.FileField(label='Sélectionner un fichier')
 

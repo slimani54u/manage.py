@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6c1db8a-8414-4db4-b35f-46c9357edd98" name="Changes" comment="modif project">
-      <change afterPath="$PROJECT_DIR$/Serveur/Serveurapp/templates/Serveurapp/Utilisateur/utilisateur_update.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Serveur/Serveurapp/templates/Serveurapp/generate_service_report.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Serveur/Serveurapp/templates/Serveurapp/upload_application.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Serveur/dossier/mon_fichier.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Serveur/media/image.jpg" afterDir="false" />
+    <list default="true" id="c6c1db8a-8414-4db4-b35f-46c9357edd98" name="Changes" comment="tout marche modif">
+      <change afterPath="$PROJECT_DIR$/Serveur/Serveurapp/static/css/style_d.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Serveur/Serveurapp/templates/Serveurapp/Application/application_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Serveur/Serveurapp/templates/Serveurapp/Serveur/serveur_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Serveur/Serveurapp/templates/Serveurapp/Services/service_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Serveur/dossier/test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Serveur/Serveur/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Serveur/Serveur/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Serveur/Serveurapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Serveur/Serveurapp/forms.py" afterDir="false" />
@@ -17,10 +17,15 @@
       <change beforePath="$PROJECT_DIR$/Serveur/Serveurapp/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Serveur/Serveurapp/static/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Serveur/Serveurapp/templates/Serveurapp/Services/service_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/Serveur/Serveurapp/templates/Serveurapp/Services/service_create.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Serveur/Serveurapp/templates/Serveurapp/Services/service_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/Serveur/Serveurapp/templates/Serveurapp/Services/service_update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Serveur/Serveurapp/templates/Serveurapp/Utilisateur/utilisateur_update.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Serveur/Serveurapp/templates/Serveurapp/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Serveur/Serveurapp/templates/Serveurapp/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Serveur/Serveurapp/templates/Serveurapp/generate_service_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/Serveur/Serveurapp/templates/Serveurapp/generate_service_report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Serveur/Serveurapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Serveur/Serveurapp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Serveur/Serveurapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Serveur/Serveurapp/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Serveur/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Serveur/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Serveur/dossier/mon_fichier.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Serveur/media/image.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Serveur/media/logos/E-portfolios-Ep1.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +41,13 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="2R3TmX0cAzvxuG9KELoBRhoFUSW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -44,18 +55,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/yasse/OneDrive/Bureau/BUTRT/Web_Dynamique/Tp-django&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "test",
+    "last_opened_file_path": "C:/Users/yasse/OneDrive/Bureau/BUTRT/Web_Dynamique/Tp-django",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\yasse\OneDrive\Bureau\project\Serveur\media" />
       <recent name="C:\Users\yasse\OneDrive\Bureau\project\Serveur\media\logos" />
       <recent name="C:\Users\yasse\OneDrive\Bureau\project\Serveur" />
       <recent name="C:\Users\yasse\OneDrive\Bureau\project\Serveur\Serveurapp\media" />
@@ -176,21 +186,7 @@
       <option name="project" value="LOCAL" />
       <updated>1686552688461</updated>
     </task>
-    <task id="LOCAL-00002" summary="modif project">
-      <created>1686556786725</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1686556786725</updated>
-    </task>
-    <task id="LOCAL-00003" summary="modif project">
-      <created>1686556829206</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1686556829206</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -209,6 +205,7 @@
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
     <MESSAGE value="modif project" />
-    <option name="LAST_COMMIT_MESSAGE" value="modif project" />
+    <MESSAGE value="tout marche modif" />
+    <option name="LAST_COMMIT_MESSAGE" value="tout marche modif" />
   </component>
 </project>
