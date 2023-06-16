@@ -1,0 +1,53 @@
+CREATE TABLE IF NOT EXISTS `projet`.`serveurapp_serveur` (
+  `id` BIGINT NOT NULL AUTO_INCREMENT,
+  `nom` VARCHAR(50) NOT NULL,
+  `nombre_processeur` INT NOT NULL,
+  `capacite_memoire` INT NOT NULL,
+  `capacite_stockage` INT NOT NULL,
+  `type_serveur_id` BIGINT NOT NULL,
+   PRIMARY KEY (`id`),
+    FOREIGN KEY (`type_serveur_id`)
+    REFERENCES `projet`.`serveurapp_typeserveur` (`id`))
+
+CREATE TABLE IF NOT EXISTS `projet`.`serveurapp_typeserveur` (
+  `id` BIGINT NOT NULL AUTO_INCREMENT,
+  `type` VARCHAR(50) NOT NULL,
+  `description` LONGTEXT NOT NULL,
+  PRIMARY KEY (`id`))
+
+CREATE TABLE IF NOT EXISTS `projet`.`serveurapp_service` (
+  `id` BIGINT NOT NULL AUTO_INCREMENT,
+  `nom_service` VARCHAR(50) NOT NULL,
+  `date_lancement` DATE NOT NULL,
+  `espace_memoire_utilise` INT NOT NULL,
+  `memoire_vive_necessaire` INT NOT NULL,
+  `serveur_lancement_id` BIGINT NOT NULL,
+  PRIMARY KEY (`id`),
+    FOREIGN KEY (`serveur_lancement_id`)
+    REFERENCES `projet`.`serveurapp_serveur` (`id`))
+
+CREATE TABLE IF NOT EXISTS `projet`.`serveurapp_utilisateur` (
+  `id` BIGINT NOT NULL AUTO_INCREMENT,
+  `nom` VARCHAR(50) NOT NULL,
+  `prenom` VARCHAR(50) NOT NULL,
+  `email` VARCHAR(254) NOT NULL,
+  PRIMARY KEY (`id`))
+
+CREATE TABLE IF NOT EXISTS `projet`.`serveurapp_application` (
+  `id` BIGINT NOT NULL AUTO_INCREMENT,
+  `nom_application` VARCHAR(50) NOT NULL,
+  `logo` VARCHAR(100) NOT NULL,
+  `utilisateur_id` BIGINT NOT NULL,
+  PRIMARY KEY (`id`),
+    FOREIGN KEY (`utilisateur_id`)
+    REFERENCES `projet`.`serveurapp_utilisateur` (`id`))
+
+CREATE TABLE IF NOT EXISTS `projet`.`serveurapp_application_services` (
+  `id` BIGINT NOT NULL AUTO_INCREMENT,
+  `application_id` BIGINT NOT NULL,
+  `service_id` BIGINT NOT NULL,
+  PRIMARY KEY (`id`),
+    FOREIGN KEY (`application_id`)
+    REFERENCES `projet`.`serveurapp_application` (`id`),
+     FOREIGN KEY (`service_id`)
+    REFERENCES `projet`.`serveurapp_service` (`id`))
