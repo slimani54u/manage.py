@@ -1,0 +1,11 @@
+INSERT INTO serveurapp_utilisateur (id, nom, prenom, email) VALUES
+(1,'toto','toto','toto@gmail.com')
+(2,'titi','titi','titi@gmail.com')
+(3,'tata','tata','tata@gmail.com');
+
+INSERT INTO serveurapp_typeserveur (id, type, description) VALUES
+(1,'DNS','résout noms de domaines')
+(2,'WEB','accès Internet')
+(3,'Fichiers','stockage en ligne')
+(4,'Email','messagerie');
+
