@@ -1,3 +1,5 @@
-- Pour l'upload vous devriez mettre le fichier test.txt qui se trouve dans le repertoire dossier
-
+- Pour l'upload vous devriez mettre le fichier test.txt qui se trouve dans le repertoire dossier du projet
+- Si vous rencontrez des probléme a l'upload c'est surement parceque vous avez supprimé un utilisateur ou un serveur donc aller dans la vue upload et modifiez l'id et mettez l'id d'utilisateur ou serveur existant
 - Pour le download vous devriez	mettre l'id de serveur que vous voulez téléchargez cet id doit etre existant si non vous aurez le message serveur non trouvé
+
+- si il y a un problém n'hésitez pas a me contacter
